@@ -1,6 +1,6 @@
 let data = [0, 5, 7, 10, 6, 11];
 let newEl = 70;
-let pos =2;
+let pos =x;
 
 for(let i = data.length-1; i>=0; i--){
     if(i>=pos){
