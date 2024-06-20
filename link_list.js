@@ -25,9 +25,24 @@ class List{
             counter++;
         }
     }
+    deleteNode(index){
+        let counter = 1;
+        let lead = this.head;
+        if(index === 1){
+            this.head = this.head.next;
+        } else {
+            while(counter < index-1){
+                lead = lead.next;
+                counter++;
+            }
+            let nextNode = lead.next.next;
+            lead.next = nextNode;
+            console.log(lead);
+        }
+    }
 }
 let list = new List(200);
 list.appendNode(300);
 list.appendNode(400);
 console.log(list);
-list.traversing();
+list.traversing(2);
