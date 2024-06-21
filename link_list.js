@@ -40,9 +40,23 @@ class List{
             console.log(lead);
         }
     }
+    insertNode(index, value){
+        let counter = 1;
+        let currentNode = this.head;
+        while(counter > index){
+            counter++;
+            currentNode = currentNode.next;
+        }
+        let nextNode = currentNode.next;
+        currentNode.next = {
+            value: value,
+            next: nextNode
+        }
+    }
 }
 let list = new List(200);
 list.appendNode(300);
 list.appendNode(400);
-console.log(list);
 list.traversing(2);
+list.insertNode(2, 4000);
+console.log(list);
