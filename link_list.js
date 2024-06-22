@@ -53,10 +53,24 @@ class List{
             next: nextNode
         }
     }
+    searchNode(){
+        let result = undefined;
+        let lead = this.head;
+        let loop = true;
+        while(loop){
+            lead = lead.next;
+            loop = !!lead;
+            if(loop && lead.value === data){
+                loop = false;
+                result = lead;
+            }
+        }
+    }
 }
 let list = new List(200);
 list.appendNode(300);
 list.appendNode(400);
 list.traversing(2);
 list.insertNode(2, 4000);
+list.searchNode(400);
 console.log(list);
