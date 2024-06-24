@@ -15,6 +15,32 @@ class BSTree {
     isTreeEmpty(){
         return this.root === null;
     }
+    makeTree(val){
+        let newNode = new Node(val);
+        if(this.root === null){
+            this.root = newNode;
+        } else {
+            this.insertNode(this.root, newNode)
+        }
+    }
+    insertNode(root, newNode){
+        if(root.value > newNode.value){
+            if(root.left === null){
+                root.left = newNode
+            } else {
+                this.insertNode(root.left, newNode)
+            }
+        } else {
+            if(root.right === null){
+                root.right = newNode
+            } else {
+                this.insertNode(root.right, newNode)
+            }
+        }
+    }
 }
 let bst = new BSTree();
-console.log(bst.isTreeEmpty());
+bst.makeTree(20);
+bst.makeTree(3);
+bst.makeTree(21);
+console.log(bst);
