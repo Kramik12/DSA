@@ -38,9 +38,23 @@ class BSTree {
             }
         }
     }
+    search(root, val){
+        if(root === null){
+            return false;
+        } else if(root.value === val){
+            return true;
+        } else if(root.value > val){
+            return this.search(root.right, val);
+        } else {
+            return this.search(root.right, val);
+        }
+    }
 }
 let bst = new BSTree();
 bst.makeTree(20);
 bst.makeTree(3);
 bst.makeTree(21);
+bst.makeTree(30);
+console.log(bst.search(bst.root, 30));
+
 console.log(bst);
